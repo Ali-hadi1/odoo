@@ -1,0 +1,57 @@
+<odoo>
+  <data>
+
+    <record id="whatsapp_integration_view_form" model="ir.ui.view">
+      <field name="name">whatsapp_integration.view.form</field>
+      <field name="model">whatsapp.model</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <header>
+            <button name="action_send_message" string="Send Message" type="object" class="oe_highlight" icon="fa-whatsapp"/>
+          </header>
+          <sheet>
+            <div class="oe_title">
+                <h1>
+                    <field name="name"/>
+                </h1>
+            </div>
+            <group>
+              <group>
+                <field name="username"></field>
+              </group>
+              <group>
+                <field name="phone"></field>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="nl_whatsapp.list">
+      <field name="name">A View</field>
+      <field name="model">whatsapp.model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="username"/>
+          <field name="phone"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="whatsapp_integration_action_window">
+      <field name="name">Whatsapp Integration</field>
+      <field name="res_model">whatsapp.model</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="Integration" id="whatsapp_integration_menu_root"/>
+
+    <menuitem name="Integration" id="whatsapp_integration_menu_1"
+              action="whatsapp_integration_action_window"/>
+
+  </data>
+</odoo>
