@@ -16,8 +16,8 @@ class SendMessageToWhatsapp(models.TransientModel):
 
     def action_send(self):
         doc = 'https://www.africau.edu/images/default/sample.pdf'
-        # data = get_text_message_input('93%s' % self.partner_id.phone, self.message_body)
-        data = get_templated_message_input('93%s' % self.partner_id.phone, doc, self.message_body)
+        data = get_text_message_input('93%s' % self.partner_id.phone, self.message_body)
+        # data = get_templated_message_input('93%s' % self.partner_id.phone, doc, self.message_body)
         asyncio.run(send_message(data))
 
 
@@ -26,7 +26,7 @@ whatsapp_config = {
     "APP_SECRET": "8a10177edc9e3dc9544d091bb67ce973",
     "VERSION": "v16.0",
     "PHONE_NUMBER_ID": "121192324283029",
-    "ACCESS_TOKEN": "EAAUYpcnFVVYBACbVFNeLi5GQZAjdgEhBtBPPgzj04zN3z0ScxE53xZBkyS9sSyygPFCLJq5q5AI2FENLTLw00VZAhzdDmuRZAZA5WlTt6grZAhqGVFslvpXDABf0sqs1XJnTyf7t9f3uJ2YqXF6e6VVb4ZBx6P3MTGaZBE8gWoh7MUEdPcaiwUAvHKVOkMA7x4fDJMrrlvZBOVAZDZD"
+    "ACCESS_TOKEN": "EAAUYpcnFVVYBADpxar4hUH5gBnsb7ZBRfBTWKg2agoy0TdaCCr4RyMI1Cggxhu99aPDVvG6VF5FS0i2OqPCZBAIZC2F62bz6PwZAX0Ic3Bdp40ExvVjAZBqgIRa8i6EkLQCmORGdaavmgdzxo6s9QiCb8BkofUohyFGZAy2AnZBWRVpGgAvjPiARha1N0kqUc9bzwvfauzzswZDZD"
 }   
 
 async def send_message(data):
